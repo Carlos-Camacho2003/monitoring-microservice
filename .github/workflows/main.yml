@@ -39,6 +39,7 @@ jobs:
             ${{ runner.os }}-sonar
 
       - name: Build and analyze with SonarCloud
+        working-directory: .
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
