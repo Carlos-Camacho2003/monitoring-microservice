@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>monitoring-microservice</name>
     <description>monitoring-microservice</description>
+         
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,6 +21,7 @@
         <sonar.organization>carlos-camacho2003</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+         <maven.resources.escapeString>\</maven.resources.escapeString>
     </properties>
 
     <dependencies>
@@ -72,11 +74,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
+                <version>3.3.1</version>
                 <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <useDefaultDelimiters>true</useDefaultDelimiters>
-                </configuration>
+                    <encoding>UTF-8</encoding>
+                    <escapeString>\</escapeString>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>png</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
